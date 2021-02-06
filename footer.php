@@ -10,7 +10,6 @@
 </div>
 <!-- END CONTACT SECTION -->
 
-  <img src="img/salade-removebg-preview.png" alt="salad" class="footer-img"/>
 <div class="container bottom-menu">
     <label class="bottom-logo">Victorya</label>
     <a href="#" class="active">Menu</a>
@@ -19,6 +18,7 @@
       <a href="#"class="bottom-link">Contact us</a>
 </div>
 <p class="copyright">Copyright©Arifur Rahman, 2019. All rights reserved</p>
+
 </div>
 </body>
 </html>

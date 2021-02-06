@@ -14,7 +14,7 @@ include('header.php');
   </div>
 </div>
 
-<div class="row">
+<div class="row package-bottom">
   <div class="col-lg-6 package-left-text">
     <div class="row">
   <h2>The best comfort food will<br> always be greens, cornbread,<br> and fried chicken.</h2>
