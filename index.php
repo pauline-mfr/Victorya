@@ -15,12 +15,12 @@ include('header.php');
 </div>
 
 <div class="row package-bottom">
-  <div class="col-lg-6 package-left-text">
+  <div class="col-lg-6  col-md-12 package-left-text">
     <div class="row">
   <h2>The best comfort food will<br> always be greens, cornbread,<br> and fried chicken.</h2>
 </div>
 <div class="row">
-  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam<br> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam <br>erat, sed diam voluptua. At vero eos et accusam et justo duo dolores<br> et ea rebum. Stet clita kasd gubergren,</p>
+  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
 </div>
 <div class="row">
         <button><a class="package-btn">Know More About Us</a></button>
@@ -50,7 +50,7 @@ include('header.php');
 </div>
 
 <!-- SECTION DYNAMIQUE -->
-<div class="container">
+<div class="container justify-content-center">
   <div class="row">
     <?php foreach ($ids as $id): ?>
     <div class="col-lg-4 col-xl-4">
@@ -73,7 +73,7 @@ include('header.php');
   </div>
   <div class="row">
     <?php
-    include('slidere.php');
+    include('slider.php');
      ?>
  </div>
 </div>

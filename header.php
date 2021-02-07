@@ -35,7 +35,13 @@
 		<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
+		<script>
+		$(document).ready(function(){
+		  $('#icone').click(function(){
+		    $('ul').toggleClass('show')
+		  });
+		});
+		</script>
 <script>
 function openForm() {
        document.getElementById("popupForm").style.display="block";
@@ -59,6 +65,9 @@ function openForm() {
         <li><a href="#contact">Contact us</a></li>
       </ul>
       <button class="open-button" onclick="openForm()"><img src="img/admin1.png" class="admin-icon"></button>
+			<label id="icone">
+				<i class="fas fa-bars"></i>
+			</label>
 			    </nav>
 
 
@@ -73,7 +82,7 @@ if (isset($_SESSION['autoriser']))
 ?>
 <div>
   <h2>Good food choices are <br>
-  good invesstments.</h2>
+  good investments.</h2>
   <p>There is a powerful need for symbolism, and that means the architecture must <br>have something that appeals to the human heart.</p>
   <button class="header-btn"><a>Order Now</a></button>
 </div>

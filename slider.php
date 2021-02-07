@@ -32,7 +32,6 @@
 
 	<h2 class="buy-btn">Crinkle Top Brownies</h2><br>
 <p class="desc2">Lorem ipsum dolor sit amet, consetetur<br> sadipscing elitr….</p>
-<button type="button" name="button" class="btnflech"><img class="flech" src="img/Tracé 466.png"/></button>
 	</div>
 	</div>
 
@@ -51,7 +50,6 @@
 	<div class="overlay1">
 		<h2 class="buy-btn">Crinkle Top Brownies</h2><br>
 		<p class="desc2">Lorem ipsum dolor sit amet, consetetur<br> sadipscing elitr….</p>
-		<button type="button" name="button" class="btnflech"><img class="flech" src="img/Tracé 466.png"/></button>
 	</div>
 	</div>
 
@@ -68,11 +66,8 @@
 	<div class="overlay1">
 		<h2 class="buy-btn">Crinkle Top Brownies</h2><br>
 		<p class="desc2">Lorem ipsum dolor sit amet, consetetur<br> sadipscing elitr….</p>
-		<button type="button" name="button" class="btnflech"><img class="flech" src="img/Tracé 466.png"/></button>
 	</div>
 	</div>
-
-
 	</div>
 </li>
 	<!--4------------------------------------>
@@ -86,11 +81,8 @@
 	<div class="overlay1">
 		<h2 class="buy-btn">Crinkle Top Brownies</h2><br>
 		<p class="desc2">Lorem ipsum dolor sit amet, consetetur<br> sadipscing elitr….</p>
-		<button type="button" name="button" class="btnflech"><img class="flech" src="img/Tracé 466.png"/></button>
 	</div>
 	</div>
-
-
 	</div>
 </li>
 	<!--5------------------------------------>
@@ -104,10 +96,8 @@
 	<div class="overlay1">
 		<h2 class="buy-btn">Crinkle Top Brownies</h2><br>
 		<p class="desc2">Lorem ipsum dolor sit amet, consetetur<br> sadipscing elitr….</p>
-		<button type="button" name="button" class="btnflech"><img class="flech" src="img/Tracé 466.png"/></button>
 	</div>
 	</div>
-
 	</div>
 </li>
 	<!--6------------------------------------>
@@ -121,10 +111,8 @@
 	<div class="overlay1">
 		<h2 class="buy-btn">Crinkle Top Brownies</h2><br>
 		<p class="desc2">Lorem ipsum dolor sit amet, consetetur<br> sadipscing elitr….</p>
-		<button type="button" name="button" class="btnflech"><img class="flech" src="img/Tracé 466.png"/></button>
 	</div>
 	</div>
-
 	</div>
 </li>
 	<!--7------------------------------------>
@@ -138,37 +126,12 @@
 	<div class="overlay1">
 		<h2 class="buy-btn">Crinkle Top Brownies</h2><br>
 		<p class="desc2">Lorem ipsum dolor sit amet, consetetur<br> sadipscing elitr….</p>
-		<button type="button" name="button" class="btnflech"><img class="flech" src="img/Tracé 466.png"/></button>
 	</div>
 	</div>
-
 	</div>
 </li>
-	<!--8------------------------------------>
-
-		<!--2------------------------------------>
-	  <li class="item-b">
-	<!--box-slider--------------->
-		<div class="box">
-		<!--img-box---------->
-		<div class="slide-img">
-		<img src="	img/p9eh9haz.png" alt="2">
-		<!--overlayer---------->
-		<div class="overlay1">
-			<h2 class="buy-btn">Crinkle Top Brownies</h2><br>
-			<p class="desc2">Lorem ipsum dolor sit amet, consetetur<br> sadipscing elitr….</p>
-			<button type="button" name="button" class="btnflech"><img class="flech" src="img/Tracé 466.png"/></button>
-		</div>
-		</div>
-
-		</div>
-	</li>
-
 </ul>
 	</section>
-
-
-
 
 <!--script-link----------->
 <script type="text/javascript" src="js/script.js"></script>
