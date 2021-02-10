@@ -5,7 +5,7 @@ include('header.php');
 <div class="container-fluid package-bg" id="package">
 <div class="row">
   <div class="col-lg-6">
-    <img src="img/im1.png"  alt="meat dish" class="package-left-img"/>
+    <img src="vue/img/im1.png"  alt="meat dish" class="package-left-img"/>
   </div>
   <div class="col-lg-6 col-sm-12 package-right-text">
     <h2>The best comfort food will<br> always be greens, cornbread,<br> and fried chicken.</h2>
@@ -29,11 +29,11 @@ include('header.php');
 <div class="col-lg-6">
   <div class="row">
     <div class="col-lg-6">
-      <img src="img/ima1.png" alt="salad" class="package-img1">
+      <img src="vue/img/ima1.png" alt="salad" class="package-img1">
     </div>
     <div class="col-lg-6">
-      <img src="img/ima3.png" alt="pancakes" class="package-img2">
-      <img src="img/ima4.png" alt="food" class="package-img3">
+      <img src="vue/img/ima3.png" alt="pancakes" class="package-img2">
+      <img src="vue/img/ima4.png" alt="food" class="package-img3">
     </div>
   </div>
 </div>
@@ -50,23 +50,24 @@ include('header.php');
 </div>
 
 <!-- SECTION DYNAMIQUE -->
-<div class="container justify-content-center">
-  <div class="row">
+<div class="container items">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     <?php foreach ($ids as $id): ?>
-    <div class="col-lg-4 col-xl-4">
-      <img src="img/<?= $id['image'] ?>" alt="food picture" class="dynamic-img">
-      <div class="dynamic-text">
-        <h3 class="dynamic-title"><?= $id['title'] ?></h3>
+    <div class="col item">
+      <div class="card h-100">
+      <img src="vue/img/<?= $id['image'] ?>" alt="food picture" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title"><?= $id['title'] ?></h3>
         <h3 class="dynamic-price">$<?= $id['price'] ?></h3>
-        <p class="dynamic-description"><?= $id['description'] ?></p>
+        <p class="card-text"><?= $id['description'] ?></p>
       </div>
     </div>
-    <?php endforeach; ?>
   </div>
+  <?php endforeach; ?>
+</div>
 </div>
 <!-- FIN SECTION DYNAMIQUE -->
 <!-- SLIDER -->
-
 <div class="container-fluid recipes">
   <div class="row">
       <h2>Our Popular Recipes</h2>
@@ -77,7 +78,6 @@ include('header.php');
      ?>
  </div>
 </div>
-
  <?php
  include('footer.php');
   ?>

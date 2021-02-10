@@ -1,11 +1,14 @@
+<?php
+include('../controler.php');
+$toUpdate = $_SESSION['update']; ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Back office</title>
+  <title>Back Office</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-<link href="vue/back.css" type="text/css" rel="stylesheet">
-<link href="vue/css/main.css" type="text/css" rel="stylesheet">
+  <link href="css/back.css" type="text/css" rel="stylesheet">
 </head>
 <body>
   <section class="container-fluid">
@@ -13,7 +16,7 @@
       <!-- SIDEBAR -->
       <div class="col-2 sidebar">
         <div class="row">
-          <img src="vue/img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4">
+          <img src="img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4">
         </div>
         <div class="row pb-4 pt-5 mt-5">
           <div>
@@ -22,7 +25,6 @@
         </div>
         </div>
         <div class="row">
-                <!-- ADDING FORM -->
           <form method="POST" action="add.php">
             <i class="far fa-plus-square text-light pl-2 pb-5"></i>
           <button class="btn" type="submit" name="add"><h2>Add a section</h2></button>
@@ -36,7 +38,7 @@
         </div>
       </div>
       <div class="col-10">
-  <div class="row header mb-5">
+  <div class="row header mb-1">
     <div class="col-10">
     <h1 class="my-4 py-4 pl-5">Dashboard</h1>
   </div>
@@ -44,29 +46,45 @@
 <i class="far fa-bell pr-4"></i>
 <i class="fas fa-envelope-open-text"></i>
 </div>
-
   </div>
-  <h1>Add</h1>
-
-  <form action="traitement.php" method="POST" enctype='multipart/form-data' name="add-form">
-    <input name="title" placeholder="Title"></input><br><br>
-    <input name="desc" placeholder="Description"></input><br><br>
-    <input name="price" placeholder="Price"></input><br><br>
-    <label for="img">Pick an image </label><input type='file' name='img'></input><br><br>
-    <label for="cat">Categorie</label><br><br>
-    <select name="cat">
+  <!-- EDIT FORM -->
+  <div class="row add-form mt-2">
+    <div class="col-3">
+      <h2 class="text-dark font-weight-bold mt-4 pl-5">Edit entry</h2>
+    </div>
+    <div class="col-9">
+<div class="pl-5">
+  <form action="../controler.php" method="POST" enctype="multipart/form-data" name="edit-form">
+    <div class="form-group pt-1">
+      <label for="new_title">New title</label>
+    <input class="form-control" name="new_title" value="<?= $toUpdate[0]['title']?>"></input>
+    <label for="new_desc">New description</label>
+    <input class="form-control" name="new_desc" value="<?= $toUpdate[0]['description']?>"></input>
+    <label for="new_price">New price</label>
+    <input class="form-control" name="new_price" value="<?= $toUpdate[0]['price']?>"></input>
+    <label>The actual image</label><br>
+    <img src="img/<?= $toUpdate[0]['image'] ?>" alt="" style="width: 15%; height: 15%;"><br><br>
+    <label for="new_img">Change the picture</label></br>
+    <input name="same_img" type="hidden" value="<?= $toUpdate[0]['image'] ?>">
+    <input class="form-control-file" type="file" name="new_img" class="btn btn-outline-primary"></input><br><br>
+    <label for="new_cat">Change categorie</label></br>
+    <select name="new_cat">
+      <option value="<?= $toUpdate[0]['category']?>"><?= $toUpdate[0]['category'] ?> </option>
       <option value="starter">Starter</option>
       <option value="main-course">Main Course</option>
       <option value="dessert">Dessert</option>
-    </select>
-    <button type="submit" name="save">OK</button>
+    </select><br></br>
+    <button class="btn btn-dark" type="submit" name="update" value= "<?= $toUpdate[0]['id'] ?>">Update</button>
   </form>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>

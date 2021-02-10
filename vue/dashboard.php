@@ -1,4 +1,4 @@
-<?php  include('traitement.php'); ?>
+<?php  include('../controler.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -6,20 +6,20 @@
     <meta charset="utf-8">
     <title>Back office</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-  <link href="vue/css/back.css" type="text/css" rel="stylesheet">
+  <link href="css/back.css" type="text/css" rel="stylesheet">
   </head>
   <body>
     <section class="container-fluid">
       <div class="row">
         <!-- SIDEBAR -->
         <div class="col-2 sidebar">
-          <div class="row">
-            <img src="vue/img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4">
+          <div class="row justify-content-center">
+            <button class="open-button"><img src="img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4"></button>
           </div>
           <div class="row pb-4 pt-5 mt-5">
             <div>
             <i class="fas fa-utensils text-light pl-2"></i>
-            <button class="btn"><h2>My sections</h2></button>
+            <button class="btn"><a href="dashboard.php"><h2>My sections</h2></a></button>
           </div>
           </div>
           <div class="row">
@@ -32,7 +32,7 @@
           <div class="row">
             <div>
             <i class="fas fa-globe text-light pl-2"></i>
-            <button class="btn"><h2>Check website</h2></button>
+            <button class="btn"><a href="../index.php" target="_blank"><h2>Check website</h2></a></button>
           </div>
           </div>
         </div>
@@ -49,7 +49,7 @@
     </div>
 <!-- SECTIONS -->
 <div class="row row-cols-1 row-cols-md-3 g-4 sections">
-  <?php foreach ($ids as $id): ?>
+  <?php $ids = showAll(); foreach ($ids as $id): ?>
   <div class="col">
     <div class="card">
       <div class="card-body">
@@ -58,7 +58,7 @@
        <button class="btn" type="submit" name="edit" value="<?= $id['id'] ?>"><i class="fas fa-edit"></i></button>
        <button class="btn" type="submit" name="delete" value="<?= $id['id'] ?>"><i class="far fa-trash-alt"></i></button>
      </form></h5>
-     <img src="vue/img/<?= $id['image'] ?>" class="card-img-top" alt="<?= $id['image'] ?>">
+     <img src="img/<?= $id['image'] ?>" class="card-img-top" alt="<?= $id['image'] ?>">
         <p class="card-text"><?= $id['description'] ?></p>
         <ul class="list-group list-group-flush">
         <li class="list-group-item"><strong>Price :</strong> <?= $id['price'] ?>€</li>
@@ -67,7 +67,7 @@
       </div>
     </div>
   </div>
-   <?php $_SESSION = $id;
+   <?php //$_SESSION = $id;  //-> skipping numeric
   endforeach; ?>
 </div>
 </div>

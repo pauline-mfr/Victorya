@@ -1,12 +1,12 @@
 
 <div class="container-fluid" id="contact">
   <div class="container">
-<img src="img/Groupe 100.png" class="left-img"/>
-<img src="img/Groupe 100.png" class="right-img"/>
-<img src="img/Rectangle 104.png" class="cadre"/>
+<img src="vue/img/Groupe 100.png" class="left-img"/>
+<img src="vue/img/Groupe 100.png" class="right-img"/>
+<img src="vue/img/Rectangle 104.png" class="cadre"/>
 <h2>Want to get the latest Updates?</h2>
 <input type="email" id="name" name="name" placeholder="example@yourmail.com"required  >
-<button class="contact-btn"><span class="subscribe">Subscribe</span><img src="img/Tracé 465.png" class="imgsubscribe"/></button>
+<button class="contact-btn"><span class="subscribe">Subscribe</span><img src="vue/img/Tracé 465.png" class="imgsubscribe"/></button>
 </div>
 <!-- END CONTACT SECTION -->
 
