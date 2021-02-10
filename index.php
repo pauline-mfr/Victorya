@@ -52,10 +52,10 @@ include('header.php');
 <!-- SECTION DYNAMIQUE -->
 <div class="container items">
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <?php foreach ($ids as $id): ?>
+    <?php $ids = showAll(); foreach ($ids as $id): ?>
     <div class="col item">
       <div class="card h-100">
-      <img src="vue/img/<?= $id['image'] ?>" alt="food picture" class="card-img-top">
+      <img src="vue/img/<?= $id['image'] ?>" alt="dish picture" class="card-img-top">
       <div class="card-body">
         <h3 class="card-title"><?= $id['title'] ?></h3>
         <h3 class="dynamic-price">$<?= $id['price'] ?></h3>

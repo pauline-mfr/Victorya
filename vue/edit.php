@@ -15,13 +15,13 @@ $toUpdate = $_SESSION['update']; ?>
     <div class="row">
       <!-- SIDEBAR -->
       <div class="col-2 sidebar">
-        <div class="row">
-          <img src="img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4">
+        <div class="row justify-content-center sidebar-icon">
+          <button class="open-button"><img src="img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4"></button>
         </div>
-        <div class="row pb-4 pt-5 mt-5">
+        <div class="row pb-4 pt-5 mt-4">
           <div>
           <i class="fas fa-utensils text-light pl-2"></i>
-          <button class="btn"><h2>My sections</h2></button>
+          <button class="btn"><a href="dashboard.php"><h2>My sections</h2></a></button>
         </div>
         </div>
         <div class="row">
@@ -33,7 +33,7 @@ $toUpdate = $_SESSION['update']; ?>
         <div class="row">
           <div>
           <i class="fas fa-globe text-light pl-2"></i>
-          <button class="btn"><h2>Check website</h2></button>
+          <button class="btn"><a href="../index.php" target="_blank"><h2>Check website</h2></a></button>
         </div>
         </div>
       </div>

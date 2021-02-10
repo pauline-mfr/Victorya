@@ -1,26 +1,26 @@
 <?php
-	session_start();
-	 include('traitement.php');
-	@$login=$_POST["login"];
-	@$pass=$_POST["pass"];
-	@$valider=$_POST["valider"];
-	$message="";
-	if(isset($valider)){
-		include("model/connexion.php");
-		include("model/traitement.php");
-		$res=$pdo->prepare("select * from admin where email=? and pass=? limit 1");
-		$res->setFetchMode(PDO::FETCH_ASSOC);
-		$res->execute(array($login,md5($pass)));
-		$tab=$res->fetchAll();
-		if(count($tab)==0)
-			$message="<li>Mauvais login ou mot de passe!</li>";
-		else{
-      //variable de session
-			$_SESSION["autoriser"]="oui";
-			$_SESSION["nomPrenom"]="rajae farhane";
-			header("location:back.php");
-		}
-	}
+	//session_start();
+	include('controler.php');
+	// @$login=$_POST["login"];
+	// @$pass=$_POST["pass"];
+	// @$valider=$_POST["valider"];
+	// $message="";
+	// if(isset($valider)){
+	// 	include("model/connexion.php");
+	// 	include("model/traitement.php");
+	// 	$res=$pdo->prepare("select * from admin where email=? and pass=? limit 1");
+	// 	$res->setFetchMode(PDO::FETCH_ASSOC);
+	// 	$res->execute(array($login,md5($pass)));
+	// 	$tab=$res->fetchAll();
+	// 	if(count($tab)==0)
+	// 		$message="<li>Mauvais login ou mot de passe!</li>";
+	// 	else{
+  //     //variable de session
+	// 		$_SESSION["autoriser"]="oui";
+	// 		$_SESSION["nomPrenom"]="rajae farhane";
+	// 		header("location:back.php");
+	// 	}
+	// }
 ?>
 <!DOCTYPE html>
 <html lang="fr" >

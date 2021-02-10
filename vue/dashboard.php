@@ -13,10 +13,10 @@
       <div class="row">
         <!-- SIDEBAR -->
         <div class="col-2 sidebar">
-          <div class="row justify-content-center">
+          <div class="row justify-content-center sidebar-icon">
             <button class="open-button"><img src="img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4"></button>
           </div>
-          <div class="row pb-4 pt-5 mt-5">
+          <div class="row pb-4 pt-5 mt-4">
             <div>
             <i class="fas fa-utensils text-light pl-2"></i>
             <button class="btn"><a href="dashboard.php"><h2>My sections</h2></a></button>
