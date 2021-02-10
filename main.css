@@ -101,7 +101,7 @@ header p {color: #0C3653; margin-left: 5vw; margin-top: 5vh; font-size: 15px; fo
       border: none;
       cursor: pointer;
       width: 100%;
-      margin-left: 0vw;    
+      margin-left: 0vw;
       opacity: 0.8;
       }
       /* Stylez le bouton pour annuler */
@@ -141,11 +141,11 @@ font-weight: bold; font-size: 28px;}
 #about h2 {margin-top: 20vh; font-weight: bold; color: #0C3653; font-size: 36px;}
 #about p {margin-top: 2vh; font-family: "Muli"; color: #AEB2B4; font-size: 16px;}
 
-.dynamic-img {margin-top: 29vh; width: 24vw;}
-.dynamic-text {border-radius: 0px 0px 15px 15px; margin-top: -0.2vh; box-shadow: 0px 0px 6px grey; width: 24vw; padding-bottom: 10vh; height: 25vh;}
-.dynamic-title {font-weight: bold; font-size: 13px; color: #0C3653; margin-top: 5vh; margin-left: 2vw; display:inline-block;}
+.items {margin-top: 20px;}
+.item {margin-bottom: 20px;}
+.card-title {font-weight: bold; font-size: 15px; color: #0C3653; margin-top: 5vh; margin-left: 5px; display:inline-block;}
 .dynamic-price {display: inline-block; color: #F98169; font-weight: bold; font-family: Georgia; margin-left: 3vw;}
-.dynamic-description {color: #000; margin-left: 2vw; font-size: 13px; margin-top: 5vh;}
+.card-text {color: #000; margin-left: 5px; font-size: 13px; margin-top: 20px;}
 
 /************** RECIPES **********/
 
@@ -195,9 +195,10 @@ font-weight: bold; font-size: 28px;}
   .package-left-text h2 {margin-top: -50px;}
   .package-left-text button {margin-top: 5vh;}
 }
-@media (max-width:950px) {
+@media (max-width:990px) {
   nav{width: 100%; padding: 0; margin: 0; left: 0; right: 0;}
   nav #icone {display:block;}
+  nav ul a:hover {display: none;}
   .open-button{display: none;}
   .package-bg {height: 70vh;}
   .package-left-img {display: none;}
