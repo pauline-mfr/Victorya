@@ -57,7 +57,7 @@ $sql = "INSERT INTO `dish` (`title`,`description`,`price`, `image`, `category`)
    $request = $conn->prepare($sql);
    if($request->execute()) {
      echo "insert ok"."<br>";
-     echo "<a href='vue/dashboard.php'>Back to main menu</a>";
+     echo "<a href='vue/dashboard/dashboard.php'>Back to main menu</a>";
    }else{
      echo "insert fail";
    }
@@ -76,7 +76,7 @@ function deleteDish() {
   ];
   if($request->execute($array)) {
     echo "delete complete"."<br>";
-    echo "<a href='vue/dashboard.php'>Back to main menu</a>";
+    echo "<a href='vue/dashboard/dashboard.php'>Back to main menu</a>";
     //header("Refresh:0"); // reload la page
   }else{
     echo "delete failed";
@@ -113,7 +113,7 @@ function updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat) 
    ];
    if($request->execute($array)) {
      $_SESSION['message'] = "update complete";
-     header('Location: vue/dashboard.php');
+     header('Location: vue/dashboard/dashboard.php');
      // echo "update complete"."<br><br>";
      // echo "<a href='vue/dashboard.php'>Back to main menu</a>";
    }else{

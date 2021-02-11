@@ -5,7 +5,7 @@ include('header.php');
 <div class="container-fluid package-bg" id="package">
 <div class="row">
   <div class="col-lg-6">
-    <img src="vue/img/im1.png"  alt="meat dish" class="package-left-img"/>
+    <img src="../img/im1.png"  alt="meat dish" class="package-left-img"/>
   </div>
   <div class="col-lg-6 col-sm-12 package-right-text">
     <h2>The best comfort food will<br> always be greens, cornbread,<br> and fried chicken.</h2>
@@ -29,11 +29,11 @@ include('header.php');
 <div class="col-lg-6">
   <div class="row">
     <div class="col-lg-6">
-      <img src="vue/img/ima1.png" alt="salad" class="package-img1">
+      <img src="../img/ima1.png" alt="salad" class="package-img1">
     </div>
     <div class="col-lg-6">
-      <img src="vue/img/ima3.png" alt="pancakes" class="package-img2">
-      <img src="vue/img/ima4.png" alt="food" class="package-img3">
+      <img src="../img/ima3.png" alt="pancakes" class="package-img2">
+      <img src="../img/ima4.png" alt="food" class="package-img3">
     </div>
   </div>
 </div>
@@ -55,7 +55,7 @@ include('header.php');
     <?php $ids = showAll(); foreach ($ids as $id): ?>
     <div class="col item">
       <div class="card h-100">
-      <img src="vue/img/<?= $id['image'] ?>" alt="dish picture" class="card-img-top">
+      <img src="../img/<?= $id['image'] ?>" alt="dish picture" class="card-img-top">
       <div class="card-body">
         <h3 class="card-title"><?= $id['title'] ?></h3>
         <h3 class="dynamic-price">$<?= $id['price'] ?></h3>

@@ -37,7 +37,7 @@ if(isset($_POST['edit'])) {
   dishToUpdate();
   $_SESSION['update'] = dishToUpdate();
   var_dump($_SESSION['update']);
-  header('Location: vue/edit.php');
+  header('Location: vue/dashboard/edit.php');
 }
  // UPDATE QUERY
  if(isset($_POST['update'])) {

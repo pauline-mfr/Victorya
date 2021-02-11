@@ -1,6 +1,6 @@
 <?php
 	//session_start();
-	include('controler.php');
+	include('../../controler.php');
 	// @$login=$_POST["login"];
 	// @$pass=$_POST["pass"];
 	// @$valider=$_POST["valider"];
@@ -30,16 +30,9 @@
     <title>Victorya-restaurant</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="vue/css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 		<link rel="preconnect" href="https://fonts.gstatic.com">
-		 <script type="text/javascript" src="vue/js/main.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-		<script>$(document).ready(function(){
-		  $('#icone').click(function(){
-		    $('ul').toggleClass('show')
-		  });
-		});</script>
+		 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
 	<body>
 
@@ -53,7 +46,7 @@
         <li><a href="#about">About us</a></li>
         <li><a href="#contact">Contact us</a></li>
       </ul>
-      <button class="open-button" onclick="openForm()"><img src="vue/img/admin1.png" class="admin-icon"></button>
+      <button class="open-button" onclick="openForm()"><img src="../img/admin1.png" class="admin-icon"></button>
 			<label id="icone">
 				<i class="fas fa-bars"></i>
 			</label>
