@@ -56,17 +56,17 @@ $sql = "INSERT INTO `dish` (`title`,`description`,`price`, `image`, `category`)
 	 VALUES ('$title','$description','$price', '$img_name', '$category')";
    $request = $conn->prepare($sql);
    if($request->execute()) {
-     echo "insert ok"."<br>";
-     echo "<a href='vue/dashboard.php'>Back to main menu</a>";
+     $_SESSION['message'] = "Section added successfully";
+     header('Location: vue/dashboard.php');
    }else{
-     echo "insert fail";
+     $_SESSION['message'] = "Section could not be added : please try again";
+     header('Location: vue/dashboard.php');
    }
    $request->closeCursor();
 } // END INSERT
 
 // DELETE ENTRY
 function deleteDish() {
-
   $conn = dbConnect();
 
   $sql = "DELETE FROM `dish` WHERE `id` = :id";
@@ -75,11 +75,11 @@ function deleteDish() {
     ":id" => $_POST['delete']
   ];
   if($request->execute($array)) {
-    echo "delete complete"."<br>";
-    echo "<a href='vue/dashboard.php'>Back to main menu</a>";
-    //header("Refresh:0"); // reload la page
+    $_SESSION['message'] = "Delete complete";
+    header('Location: vue/dashboard.php');
   }else{
-    echo "delete failed";
+    $_SESSION['message'] = "Delete fail : please try again";
+    header('Location: vue/dashboard.php');
   }
   $request->closeCursor();
 } // END DELETE
@@ -112,10 +112,11 @@ function updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat) 
      ":id" => $_POST['update']
    ];
    if($request->execute($array)) {
-     echo "update complete"."<br><br>";
-     echo "<a href='vue/dashboard.php'>Back to main menu</a>";
+     $_SESSION['message'] = "Update complete";
+     header('Location: vue/dashboard.php');
    }else{
-     echo "update failed";
+     $_SESSION['message'] = "Update fail : please try again";
+     header('Location: vue/dashboard.php');
    }
    $request->closeCursor();
  } // END UPDATE

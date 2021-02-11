@@ -28,7 +28,8 @@ if (isset($_POST['save'])) {
 
 // DELETE ENTRY
 if(isset($_POST['delete'])) {
-  echo '<script> alert ("You\'re about to delete this entry !")</script>';
+  echo "You're about to delete this entry";
+    echo '<script> alert ("You\'re about to delete this entry !")</script>';
   deleteDish();
 }
 
