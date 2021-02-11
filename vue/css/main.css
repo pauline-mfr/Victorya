@@ -160,6 +160,7 @@ font-weight: bold; font-size: 28px;}
 .overlay1 h2 {color: #fff; font-weight: bold; font-family: georgia; font-size: 25px; margin-top: 10vh; padding-bottom: 3vh; text-align: center;}
 .overlay1 p {font-family: "Muli"; font-size: 16px; text-align: center; color: white;}
 .slide-img:hover .overlay1{visibility: visible;	animation:fade 0.5s;}
+.lSPager {display: none;}
 
 /************** FOOTER *************************/
 

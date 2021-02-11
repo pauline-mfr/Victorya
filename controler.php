@@ -6,11 +6,11 @@ require('model.php');
 //INSERT INTO
 if (isset($_POST['save'])) {
   $title = $_POST['title'];
-  if (empty($title)) {echo "Title is empty";}
+  if (empty($title)) {echo "Title is empty<br>";}
   $description = $_POST['desc'];
-  if (empty($description)) {echo "Description is empty";}
+  if (empty($description)) {echo "Description is empty<br>";}
   $price = $_POST['price'];
-  if (empty($price)) {echo "Price is empty";}
+  if (empty($price)) {echo "Price is empty<br>";}
 
   //IMG UPLOAD
   if(isset($_FILES['img'])){
@@ -22,7 +22,10 @@ if (isset($_POST['save'])) {
   $category = $_POST['cat'];
   if (empty($category)) {echo "Category is missing";}
 
-  addDish($title, $description, $price, $img_name, $category);
+  if(!(empty($title)) && !(empty($description)) && !(empty($price)) && !(empty($category))) {
+      addDish($title, $description, $price, $img_name, $category);
+  }
+
 
 } // END INSERT
 
