@@ -5,8 +5,7 @@ body {background: linear-gradient(to right, lightgrey, #CBCBED); margin: 0; padd
 h1 {color: #323845; display: inline-block;}
 h2 {font-size: 24px; font-weight: 400; color: lightgrey;}
 a {text-decoration: none;}
-.sidebar {background-color: #323845;}
-.sidebar-icon {}
+.sidebar {background-color: #323845;} /*height: 100vh; */
 .admin-icon {width: 55px; height: 80px; padding-bottom: 3px;}
 .open-button {width: 110px; height:110px; border-radius: 50%; border: none; background: #F98169; margin-top: 20px;}
 .dashboard-icons {float: right;}

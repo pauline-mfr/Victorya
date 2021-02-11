@@ -84,7 +84,7 @@ function deleteDish() {
   $request->closeCursor();
 } // END DELETE
 
-
+// UPDATE ENTRY
 function dishToUpdate() {
 
   $conn = dbConnect();
@@ -112,8 +112,10 @@ function updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat) 
      ":id" => $_POST['update']
    ];
    if($request->execute($array)) {
-     echo "update complete"."<br><br>";
-     echo "<a href='vue/dashboard.php'>Back to main menu</a>";
+     $_SESSION['message'] = "update complete";
+     header('Location: vue/dashboard.php');
+     // echo "update complete"."<br><br>";
+     // echo "<a href='vue/dashboard.php'>Back to main menu</a>";
    }else{
      echo "update failed";
    }
