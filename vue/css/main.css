@@ -1,4 +1,4 @@
-html {margin: 0; padding: 0; text-decoration: none; list-style: none;}
+html {margin: 0; padding: 0; text-decoration: none; list-style: none; scroll-behavior: smooth;}
 body {font-family: "Poppins";}
 
 /* HEADER */
@@ -142,7 +142,9 @@ font-weight: bold; font-size: 28px;}
 
 .items {margin-top: 20px;}
 .item {margin-bottom: 20px;}
-.card-title {font-weight: bold; font-size: 15px; color: #0C3653; margin-top: 5vh; margin-left: 5px; display:inline-block;}
+.card {height: 400px; border-radius: 10px; border: 2px solid #F98169; padding: 8px;}
+.card-img-top {border-radius: 10px;}
+.card-title {font-weight: bold; font-size: 20px; color: #0C3653; margin-top: 2vh; margin-left: 5px; display:inline-block;}
 .dynamic-price {display: inline-block; color: #F98169; font-weight: bold; font-family: Georgia; margin-left: 3vw;}
 .card-text {color: #000; margin-left: 5px; font-size: 13px; margin-top: 20px;}
 
@@ -197,7 +199,6 @@ font-weight: bold; font-size: 28px;}
 @media (max-width:990px) {
   nav{width: 100%; padding: 0; margin: 0; left: 0; right: 0;}
   nav #icone {display:block;}
-  nav ul a:hover {display: none;}
   .open-button{display: none;}
   .package-bg {height: 70vh;}
   .package-left-img {display: none;}
@@ -214,7 +215,6 @@ font-weight: bold; font-size: 28px;}
   nav ul {background-color: rgba(222,	184,	135); position: fixed; width: 100%; height: 100vh; top: 0; left: -100%; text-align:center; z-index: 2;}
   nav li {display: block; padding: 2vh; line-height: 30px;}
   nav a {font-size: 25px; color: #fff;}
-  nav a:hover {display: none;}
   nav ul.show{left: 0;}
 }
 

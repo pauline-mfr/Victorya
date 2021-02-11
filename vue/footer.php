@@ -21,10 +21,13 @@
 </div>
 <script type="text/javascript" src="js/main.js"></script>
 <script src="https://kit.fontawesome.com/5bf2af5d34.js" crossorigin="anonymous"></script>
-<script>$(document).ready(function(){
-  $('#icone').click(function(){
+<script>
+$(document).ready(function(){
+  $('#toogle-menu').click(function(){
     $('ul').toggleClass('show')
   });
-});</script>
+});
+
+</script>
 </body>
 </html>

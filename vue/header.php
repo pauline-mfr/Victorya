@@ -38,9 +38,9 @@
 
 <!-- HEADER -->
 <header class="container-fluid" id="menu">
-	    <nav>
+	    <nav id="toogle-menu">
       <h1 class="logo">Victorya</h1>
-      <ul>
+      <ul id="menu-close">
         <li><a href="#menu" class="active">Menu</a></li>
         <li><a href="#package">Package</a></li>
         <li><a href="#about">About us</a></li>

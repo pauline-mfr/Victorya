@@ -51,10 +51,10 @@ include('header.php');
 
 <!-- SECTION DYNAMIQUE -->
 <div class="container items">
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <?php $ids = showAll(); foreach ($ids as $id): ?>
     <div class="col item">
-      <div class="card h-100">
+      <div class="card">
       <img src="img/<?= $id['image'] ?>" alt="dish picture" class="card-img-top">
       <div class="card-body">
         <h3 class="card-title"><?= $id['title'] ?></h3>
