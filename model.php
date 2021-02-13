@@ -128,6 +128,9 @@ function updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat) 
    if($request->execute($array)) {
      $_SESSION['message'] = "Update complete";
      header('Location: vue/dashboard.php');
+     if($new_img_name==NULL) {
+       $_SESSION['message'] .= "<br>The submitted file was nos an image, please try to upload once again";
+     }
    }else{
      $_SESSION['message'] = "Update fail : please try again";
      header('Location: vue/dashboard.php');

@@ -24,11 +24,15 @@ if (isset($_POST['save'])) {
 
   //IMG UPLOAD
   if(isset($_FILES['img'])){
+    $extensions_ok = array('png', 'gif', 'jpg', 'jpeg', 'JPG', 'bmp');
+    if(!in_array(substr(strrchr($_FILES['img']['name'], '.'), 1), $extensions_ok)) {
+     $img_name = NULL;
+   } else {
   $img_name = $_FILES['img']['name'];
   $dir ='vue/img/'.$img_name;
   move_uploaded_file($_FILES['img']['tmp_name'], $dir);
   }
-
+}
   if(isset($_POST['cat'])) {
     $category = filterData($_POST['cat']);
   } else {
@@ -65,10 +69,15 @@ if(isset($_POST['edit'])) {
 
    //IMG UPLOAD
     if((is_uploaded_file($_FILES['new_img']['tmp_name'])) && (!empty($_FILES['new_img'])) ){
+      $extensions_ok = array('png', 'gif', 'jpg', 'jpeg', 'JPG', 'bmp');
+      if(!in_array(substr(strrchr($_FILES['new_img']['name'], '.'), 1), $extensions_ok)) {
+       $new_img_name = NULL;
+    }else{
    $new_img_name = $_FILES['new_img']['name'];
    $dir ='vue/img/'.$new_img_name;
    move_uploaded_file($_FILES['new_img']['tmp_name'], $dir);
   }
+}
    $new_cat = filterData($_POST['new_cat']);
 
    if(!(empty($new_title)) && !(empty($new_desc)) && !(empty($new_price)) && !(empty($new_cat))) {
