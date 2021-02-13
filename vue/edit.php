@@ -58,18 +58,18 @@ $toUpdate = $_SESSION['update']; ?>
   <form action="../controler.php" method="POST" enctype="multipart/form-data" name="edit-form">
     <div class="form-group pt-1">
       <label for="new_title">New title</label>
-    <input class="form-control" name="new_title" value="<?= $toUpdate[0]['title']?>"></input>
+    <input class="form-control" name="new_title" type="text" value="<?= $toUpdate[0]['title']?> " required></input>
     <label for="new_desc">New description</label>
-    <input class="form-control" name="new_desc" value="<?= $toUpdate[0]['description']?>"></input>
+    <textarea class="form-control" name="new_desc" type="text" row="3" required><?= $toUpdate[0]['description']?></textarea>
     <label for="new_price">New price</label>
-    <input class="form-control" name="new_price" value="<?= $toUpdate[0]['price']?>"></input>
+    <input class="form-control" name="new_price" value="<?= $toUpdate[0]['price']?>" type="number" required></input>
     <label>The actual image</label><br>
     <img src="img/<?= $toUpdate[0]['image'] ?>" alt="" style="width: 15%; height: 15%;"><br><br>
     <label for="new_img">Change the picture</label></br>
     <input name="same_img" type="hidden" value="<?= $toUpdate[0]['image'] ?>">
     <input class="form-control-file" type="file" name="new_img" class="btn btn-outline-primary"></input><br><br>
     <label for="new_cat">Change categorie</label></br>
-    <select name="new_cat">
+    <select name="new_cat" required>
       <option value="<?= $toUpdate[0]['category']?>"><?= $toUpdate[0]['category'] ?> </option>
       <option value="starter">Starter</option>
       <option value="main-course">Main Course</option>

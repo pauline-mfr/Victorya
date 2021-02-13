@@ -5,6 +5,7 @@ require('model.php');
 
 //INSERT INTO
 if (isset($_POST['save'])) {
+
   $title = $_POST['title'];
   if (empty($title)) {echo "Title is empty<br>";}
   $description = $_POST['desc'];
@@ -19,19 +20,19 @@ if (isset($_POST['save'])) {
   move_uploaded_file($_FILES['img']['tmp_name'], $dir);
   }
 
-  $category = $_POST['cat'];
-  if (empty($category)) {echo "Category is missing";}
+  if(isset($_POST['cat'])) {
+    $category = $_POST['cat'];
+  } else {
+    echo "Category is missing";
+  }
 
   if(!(empty($title)) && !(empty($description)) && !(empty($price)) && !(empty($category))) {
       addDish($title, $description, $price, $img_name, $category);
   }
-
-
 } // END INSERT
 
 // DELETE ENTRY
 if(isset($_POST['delete'])) {
-  echo "You're about to delete this entry";
     echo '<script> alert ("You\'re about to delete this entry !")</script>';
   deleteDish();
 }
@@ -40,7 +41,6 @@ if(isset($_POST['delete'])) {
 if(isset($_POST['edit'])) {
   dishToUpdate();
   $_SESSION['update'] = dishToUpdate();
-  var_dump($_SESSION['update']);
   header('Location: vue/edit.php');
 }
  // UPDATE QUERY
@@ -50,6 +50,10 @@ if(isset($_POST['edit'])) {
    $new_price = $_POST['new_price'];
    $new_img_name = $_POST['same_img'];
 
+   if (empty($new_title)) {echo "Title is empty<br>";}
+   if (empty($new_desc)) {echo "Description is empty<br>";}
+   if (empty($new_price)) {echo "Price is empty<br>";}
+
    //IMG UPLOAD
     if((is_uploaded_file($_FILES['new_img']['tmp_name'])) && (!empty($_FILES['new_img'])) ){
    $new_img_name = $_FILES['new_img']['name'];
@@ -57,5 +61,16 @@ if(isset($_POST['edit'])) {
    move_uploaded_file($_FILES['new_img']['tmp_name'], $dir);
   }
    $new_cat = $_POST['new_cat'];
-   updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat);
- }
+
+   if(!(empty($new_title)) && !(empty($new_desc)) && !(empty($new_price)) && !(empty($new_cat))) {
+       updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat);
+   }
+ } //END UPDATE QUERY
+
+// CONNEXION
+//   if(isset($_POST['username']) && isset($_POST['password']))
+//   {
+//     $username = $_POST['username'];
+//     $password = $_POST['password'];
+//     adminConnect($username, $password);
+// }

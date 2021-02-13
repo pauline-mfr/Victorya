@@ -73,18 +73,18 @@ if (isset($_SESSION['autoriser']))
 <!-- Admin form -->
   <div class="login-popup">
    <div class="form-popup" id="popupForm">
-     <form action=""name="fo" method="post" class="form-container">
-       <label for="email">
-       <strong>E-mail</strong>
+     <form action="connect.php" name="connexion" method="POST" class="form-container">
+       <label for="username">
+       <strong>Username</strong>
        </label>
-       <input type="text" id="email" placeholder="Votre Email" name="login" required>
-       <label for="psw">
-       <strong>Mot de passe</strong>
+       <input type="text" id="username" placeholder="Username" name="username" required>
+       <label for="password">
+       <strong>Password</strong>
        </label>
-       <input type="password" id="psw" placeholder="Votre Mot de passe" name="pass" required>
+       <input type="password" id="psw" placeholder="Password" name="password" required>
        <?php   include("messageerreur.php"); ?>
-       <button type="submit" class="btn" name="valider">Se connecter</button>
-       <button type="button" class="btn cancel" onclick="closeForm()">Annuler</button>
+       <button type="submit" class="btn" name="connect">Connexion</button>
+       <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
      </form>
    </div>
  </div>

@@ -16,7 +16,7 @@ try {
   die("Connection failed" . $e->getMessage());   //message d'erreur
 }
 
-// CREATE TABLE
+// CREATE DISH TABLE
 $sql= "CREATE TABLE IF NOT EXISTS `dish` (
    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
    `title` VARCHAR(50) NOT NULL ,
@@ -28,6 +28,17 @@ $sql= "CREATE TABLE IF NOT EXISTS `dish` (
 $request = $conn->prepare($sql);
 $request->execute();
 $request->closeCursor();
+
+// CREATE ADMIN TABLE
+$sql_adm = "CREATE TABLE IF NOT EXISTS `admin` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `username` VARCHAR(50) NOT NULL,
+   `password` VARCHAR(100) NOT NULL,
+   PRIMARY KEY (`id`)
+ ) ENGINE=MyISAM;";
+ $request = $conn->prepare($sql_adm);
+ $request->execute();
+ $request->closeCursor();
 
 return $conn;
 } // END CONNECT
@@ -120,3 +131,25 @@ function updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat) 
    }
    $request->closeCursor();
  } // END UPDATE
+
+// ADMIN LOGIN
+// function adminConnect($username, $password) {
+//   $conn = dbConnect();
+//
+//   $sql = "SELECT * FROM `admin` WHERE `username`='$username' AND `password`='$password'";
+//   $run = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+//   if (mysqli_num_rows($run)==1) {
+//     header('Location: vue/dashboard.php');
+//   }else{
+//   echo 'wrong combination, could not log';
+//   }
+//   $request->closeCursor();
+// }
+
+// $sql = "INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+//   (1, 'main-admin', 'GF48Hga'),
+//   (2, 'admin1', 'MP79Rt4'),
+//   (3, 'admin2', '47WEK73un')";
+//   $request = dbConnect()->prepare($sql);
+//   $request->execute();
+//   $request->closeCursor();
