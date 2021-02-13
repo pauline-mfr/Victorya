@@ -44,6 +44,9 @@
 <i class="fas fa-envelope-open-text"></i>
 </div>
   </div>
+  <?php if(isset($_SESSION['message'])){
+    echo '<div class="alert alert-warning pl-2" role="alert">'.$_SESSION['message'].'</div>';
+}?>
         <!-- ADDING FORM -->
         <div class="row add-form mt-2">
           <div class="col-3">

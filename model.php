@@ -69,6 +69,9 @@ $sql = "INSERT INTO `dish` (`title`,`description`,`price`, `image`, `category`)
    if($request->execute()) {
      $_SESSION['message'] = "Section added successfully";
      header('Location: vue/dashboard.php');
+     if($img_name==NULL) {
+       $_SESSION['message'] .= "<br>The submitted file was nos an image, please try to upload once again";
+     }
    }else{
      $_SESSION['message'] = "Section could not be added : please try again";
      header('Location: vue/dashboard.php');
