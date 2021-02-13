@@ -83,7 +83,7 @@ function deleteDish() {
   $sql = "DELETE FROM `dish` WHERE `id` = :id";
   $request = $conn->prepare($sql);
   $array = [
-    ":id" => $_POST['delete']
+    ":id" => filterData($_POST['delete'])
   ];
   if($request->execute($array)) {
     $_SESSION['message'] = "Delete complete";
@@ -103,7 +103,7 @@ function dishToUpdate() {
   $sql = "SELECT * FROM `dish` WHERE `id` = :id ";
   $request = $conn->prepare($sql);
   $array = [
-    ":id" => $_POST['edit']
+    ":id" => filterData($_POST['edit'])
   ];
   $request->execute($array);
   $toUpdate = $request->FetchAll();
@@ -120,7 +120,7 @@ function updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat) 
    $sql = "UPDATE `dish` SET `title` = '$new_title', `description` = '$new_desc', `price` = '$new_price', `image` = '$new_img_name', `category` = '$new_cat' WHERE `id` = :id";
    $request = $conn->prepare($sql);
    $array = [
-     ":id" => $_POST['update']
+     ":id" => filterData($_POST['update'])
    ];
    if($request->execute($array)) {
      $_SESSION['message'] = "Update complete";
@@ -133,18 +133,31 @@ function updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat) 
  } // END UPDATE
 
 // ADMIN LOGIN
-// function adminConnect($username, $password) {
-//   $conn = dbConnect();
-//
-//   $sql = "SELECT * FROM `admin` WHERE `username`='$username' AND `password`='$password'";
-//   $run = mysqli_query($conn,$sql) or die(mysqli_error($conn));
-//   if (mysqli_num_rows($run)==1) {
-//     header('Location: vue/dashboard.php');
-//   }else{
-//   echo 'wrong combination, could not log';
-//   }
-//   $request->closeCursor();
-// }
+ // function adminConnect($username, $password) {
+ //   $servername = "localhost";
+ //   $dbname = "food"; //nom de la database
+ //   $username = "root";
+ //   $password = "";
+ //
+ //   $conn = mysqli_connect($servername, $username, $password, $dbname);
+ //
+ //   $request = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+ //   $run = mysqli_query($conn,$request) or die(mysqli_error($conn));
+ //
+ //   if (mysqli_num_rows($run)==0)
+ //   {
+ //     var_dump($run);
+ //      echo "wrong";
+ //
+ //     exit();
+ //   }else{
+ //     var_dump($run);
+ //    header("location: dashboard.php");
+ //     //$message="<li>Wrong combination, could not log</li>";
+ //     exit();
+ //   }
+ // } // END LOGIN
+
 
 // $sql = "INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 //   (1, 'main-admin', 'GF48Hga'),

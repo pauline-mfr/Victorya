@@ -1,16 +1,25 @@
 <?php
 session_start();
-
 require('model.php');
+
+// SECURITY CHECKS
+function filterData($data) {
+        //$data = htmlspecialchars($data); //special caracters
+        $data = trim($data); // delete useless spaces
+        $data = stripslashes($data); //strip backslashes
+        $data = strip_tags($data); //strip html tags
+        return $data;
+    }
+
 
 //INSERT INTO
 if (isset($_POST['save'])) {
 
-  $title = $_POST['title'];
+  $title = filterData($_POST['title']);
   if (empty($title)) {echo "Title is empty<br>";}
-  $description = $_POST['desc'];
+  $description = filterData($_POST['desc']);
   if (empty($description)) {echo "Description is empty<br>";}
-  $price = $_POST['price'];
+  $price = filterData($_POST['price']);
   if (empty($price)) {echo "Price is empty<br>";}
 
   //IMG UPLOAD
@@ -21,7 +30,7 @@ if (isset($_POST['save'])) {
   }
 
   if(isset($_POST['cat'])) {
-    $category = $_POST['cat'];
+    $category = filterData($_POST['cat']);
   } else {
     echo "Category is missing";
   }
@@ -45,10 +54,10 @@ if(isset($_POST['edit'])) {
 }
  // UPDATE QUERY
  if(isset($_POST['update'])) {
-   $new_title = $_POST['new_title'];
-   $new_desc = $_POST['new_desc'];
-   $new_price = $_POST['new_price'];
-   $new_img_name = $_POST['same_img'];
+   $new_title = filterData($_POST['new_title']);
+   $new_desc = filterData($_POST['new_desc']);
+   $new_price = filterData($_POST['new_price']);
+   $new_img_name = filterData($_POST['same_img']);
 
    if (empty($new_title)) {echo "Title is empty<br>";}
    if (empty($new_desc)) {echo "Description is empty<br>";}
@@ -60,17 +69,17 @@ if(isset($_POST['edit'])) {
    $dir ='vue/img/'.$new_img_name;
    move_uploaded_file($_FILES['new_img']['tmp_name'], $dir);
   }
-   $new_cat = $_POST['new_cat'];
+   $new_cat = filterData($_POST['new_cat']);
 
    if(!(empty($new_title)) && !(empty($new_desc)) && !(empty($new_price)) && !(empty($new_cat))) {
        updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat);
    }
  } //END UPDATE QUERY
 
-// CONNEXION
-//   if(isset($_POST['username']) && isset($_POST['password']))
+// // CONNEXION
+//   if(isset($_POST['connect']) && (isset($_POST['username']) && isset($_POST['password'])) )
 //   {
 //     $username = $_POST['username'];
 //     $password = $_POST['password'];
 //     adminConnect($username, $password);
-// }
+// } // END CONNEXION

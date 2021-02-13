@@ -1,27 +1,5 @@
 <?php
-	//session_start();
-	include('../controler.php');
-	// @$login=$_POST["login"];
-	// @$pass=$_POST["pass"];
-	// @$valider=$_POST["valider"];
-	// $message="";
-	// if(isset($valider)){
-	// 	include("model/connexion.php");
-	// 	include("model/traitement.php");
-	// 	$res=$pdo->prepare("select * from admin where email=? and pass=? limit 1");
-	// 	$res->setFetchMode(PDO::FETCH_ASSOC);
-	// 	$res->execute(array($login,md5($pass)));
-	// 	$tab=$res->fetchAll();
-	// 	if(count($tab)==0)
-	// 		$message="<li>Mauvais login ou mot de passe!</li>";
-	// 	else{
-  //     //variable de session
-	// 		$_SESSION["autoriser"]="oui";
-	// 		$_SESSION["nomPrenom"]="rajae farhane";
-	// 		header("location:back.php");
-	// 	}
-	// }
-?>
+include('../controler.php'); ?>
 <!DOCTYPE html>
 <html lang="fr" >
   <head>
@@ -52,16 +30,6 @@
 			</label>
 			    </nav>
 
-
-      <?php
-if (isset($_SESSION['autoriser']))
-{
-?>
-<li id="dec"><a href="back.php"> <?=$_SESSION["nomPrenom"]?></a></li>
-<li id="dec1"><a href="model/deconnexion.php">Deconnexion</a></li>
-<?php
-}
-?>
 <div>
   <h2>Good food choices are <br>
   good investments.</h2>
@@ -82,7 +50,7 @@ if (isset($_SESSION['autoriser']))
        <strong>Password</strong>
        </label>
        <input type="password" id="psw" placeholder="Password" name="password" required>
-       <?php   include("messageerreur.php"); ?>
+       <?php if(isset($message)) {echo $message;}; ?>
        <button type="submit" class="btn" name="connect">Connexion</button>
        <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
      </form>

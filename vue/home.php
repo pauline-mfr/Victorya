@@ -57,9 +57,9 @@ include('header.php');
       <div class="card">
       <img src="img/<?= $id['image'] ?>" alt="dish picture" class="card-img-top">
       <div class="card-body">
-        <h3 class="card-title"><?= $id['title'] ?></h3>
-        <h3 class="dynamic-price">$<?= $id['price'] ?></h3>
-        <p class="card-text"><?= $id['description'] ?></p>
+        <h3 class="card-title"><?= filterData($id['title']) ?></h3>
+        <h3 class="dynamic-price">$<?= filterData($id['price']) ?></h3>
+        <p class="card-text"><?= filterData($id['description']) ?></p>
       </div>
     </div>
   </div>
