@@ -2,7 +2,7 @@
 session_start();
 require('model.php');
 
-// SECURITY CHECKS
+// FILTER DATA
 function filterData($data) {
         //$data = htmlspecialchars($data); //special caracters
         $data = trim($data); // delete useless spaces
@@ -46,7 +46,6 @@ if (isset($_POST['save'])) {
 
 // DELETE ENTRY
 if(isset($_POST['delete'])) {
-    echo '<script> alert ("You\'re about to delete this entry !")</script>';
   deleteDish();
 }
 

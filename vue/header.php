@@ -1,5 +1,7 @@
 <?php
-include('../controler.php'); ?>
+include('../controler.php');
+include('connect.php'); ?>
+
 <!DOCTYPE html>
 <html lang="fr" >
   <head>
@@ -41,7 +43,7 @@ include('../controler.php'); ?>
 <!-- Admin form -->
   <div class="login-popup">
    <div class="form-popup" id="popupForm">
-     <form action="connect.php" name="connexion" method="POST" class="form-container">
+     <form action="" name="connexion" method="POST" class="form-container">
        <label for="username">
        <strong>Username</strong>
        </label>
@@ -50,9 +52,12 @@ include('../controler.php'); ?>
        <strong>Password</strong>
        </label>
        <input type="password" id="psw" placeholder="Password" name="password" required>
-       <?php if(isset($message)) {echo $message;}; ?>
+       <?php if(isset($_SESSION['error'])){
+         echo '<div class="alert alert-warning pl-2" role="alert">'.$_SESSION['error'].'</div>';
+   }?>
        <button type="submit" class="btn" name="connect">Connexion</button>
        <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
      </form>
    </div>
  </div>
+<?php  ?>
