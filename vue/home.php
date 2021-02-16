@@ -49,7 +49,7 @@ include('header.php');
 </div>
 </div>
 
-<!-- SECTION DYNAMIQUE -->
+<!-- DYNAMIC SECTION -->
 <div class="container items">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     <?php $ids = showAll(); foreach ($ids as $id): ?>
@@ -66,7 +66,7 @@ include('header.php');
   <?php endforeach; ?>
 </div>
 </div>
-<!-- FIN SECTION DYNAMIQUE -->
+<!-- END OF DYNAMIC SECTION -->
 <!-- SLIDER -->
 <div class="container-fluid recipes">
   <div class="row">

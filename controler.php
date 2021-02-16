@@ -4,11 +4,12 @@ require('model.php');
 
 // FILTER DATA
 function filterData($data) {
-        //$data = htmlspecialchars($data); //special caracters
+        $data = htmlspecialchars($data); //special caracters
         $data = trim($data); // delete useless spaces
         $data = stripslashes($data); //strip backslashes
         $data = strip_tags($data); //strip html tags
         return $data;
+        //htmlentities
     }
 
 
@@ -23,13 +24,14 @@ if (isset($_POST['save'])) {
   if (empty($price)) {echo "Price is empty<br>";}
 
   //IMG UPLOAD
-  if(isset($_FILES['img'])){
-    $extensions_ok = array('png', 'gif', 'jpg', 'jpeg', 'JPG', 'bmp');
-    if(!in_array(substr(strrchr($_FILES['img']['name'], '.'), 1), $extensions_ok)) {
+  if($_FILES['img']['error']!=4){
+    $extensions_img = array('png', 'gif', 'jpg', 'jpeg', 'JPG', 'bmp');
+    if(!in_array(substr(strrchr($_FILES['img']['name'], '.'), 1), $extensions_img)) {
      $img_name = NULL;
    } else {
   $img_name = $_FILES['img']['name'];
   $dir ='vue/img/'.$img_name;
+  // from > to
   move_uploaded_file($_FILES['img']['tmp_name'], $dir);
   }
 }
@@ -67,7 +69,7 @@ if(isset($_POST['edit'])) {
    if (empty($new_price)) {echo "Price is empty<br>";}
 
    //IMG UPLOAD
-    if((is_uploaded_file($_FILES['new_img']['tmp_name'])) && (!empty($_FILES['new_img'])) ){
+    if($_FILES['new_img']['error']!=4){
       $extensions_ok = array('png', 'gif', 'jpg', 'jpeg', 'JPG', 'bmp');
       if(!in_array(substr(strrchr($_FILES['new_img']['name'], '.'), 1), $extensions_ok)) {
        $new_img_name = NULL;

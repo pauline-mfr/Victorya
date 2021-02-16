@@ -21,3 +21,4 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
     }
 }
 //MP79Rt4
+//$password = password_hash($pass , PASSWORD_DEFAULT)
