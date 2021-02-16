@@ -20,5 +20,22 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
       $_SESSION['error'] = "Wrong combination, could not log";
     }
 }
+
+//function addAdmin() {
+ $sql = "INSERT INTO `admin` (`id`, `username`, `password`) VALUES (:username, :password)";
+ $request = $conn->prepare($sql);
+ $username= 'main-admin';
+ $request->bindValue(':username', $username, PDO::PARAM_STR);
+ $password = password_hash('GF48Hga', PASSWORD_DEFAULT);
+ $request->bindValue(':password', $password, PDO::PARAM_STR);
+ $request->execute();
+ $request->closeCursor();
+//   (1, 'main-admin', 'GF48Hga'),
+//   (2, 'admin1', 'MP79Rt4'),
+//   (3, 'admin2', '47WEK73un')";
+//   $request = dbConnect()->prepare($sql);
+//   $request->execute();
+//   $request->closeCursor();
+//}
 //MP79Rt4
 //$password = password_hash($pass , PASSWORD_DEFAULT)

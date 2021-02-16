@@ -58,9 +58,9 @@
   <form action="../controler.php" method="POST" enctype='multipart/form-data' name="add-form">
     <div class="form-group pt-1">
       <label for="title">Title</label>
-    <input name="title" placeholder="Pasta" type="text" class="form-control" required>
+    <input name="title" placeholder="ex: Pasta" type="text" class="form-control" required>
     <label for="desc">Description</label>
-    <textarea name="desc" type="text" class="form-control" row="3" required></textarea>
+    <textarea name="desc" placeholder="Describe your product" type="text" class="form-control" row="3" required></textarea>
     <label for="price">Price</label>
     <input name="price" placeholder="12" type="number" class="form-control" required>
     <label for="img">Pick an image</label><br>
