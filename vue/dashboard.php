@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>Back office</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <link href="css/back.css" type="text/css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/5bf2af5d34.js" crossorigin="anonymous"></script>
@@ -14,7 +15,7 @@
   <section class="container-fluid">
     <div class="row">
       <!-- SIDEBAR -->
-      <div class="col-2 sidebar">
+      <div class="col-lg-2 col-md-3 sidebar">
         <div class="row justify-content-center sidebar-icon">
           <button class="open-button"><img src="img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4"></button>
         </div>
@@ -38,14 +39,14 @@
           </div>
         </div>
       </div>
-      <div class="col-10">
+      <div class="col-lg-10 col-md-9">
         <div class="row header mb-5">
-          <div class="col-10">
+          <div class="col-md-8 col-10">
             <h1 class="my-4 py-4 pl-5">Dashboard</h1>
           </div>
-          <div class="col-2 my-4 py-4 header-icons">
+          <div class="col-md-4 col-2 my-4 py-4 header-icons">
             <i class="far fa-bell pr-4"></i>
-            <i class="fas fa-envelope-open-text"></i>
+            <i class="fas fa-envelope-open-text pr-4"></i>
             <a href="home.php"><i class="fas fa-sign-out-alt"></i></a>
           </div>
         </div>
@@ -53,7 +54,7 @@
           echo '<div class="alert alert-warning pl-2" role="alert">'.$_SESSION['message'].'</div>';
         }?>
         <!-- SECTIONS -->
-        <div class="row row-cols-1 row-cols-md-3 g-4 sections">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 sections">
           <?php $ids = showAll(); foreach ($ids as $id): ?>
             <div class="col">
               <div class="card">

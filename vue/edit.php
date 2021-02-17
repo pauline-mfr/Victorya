@@ -6,6 +6,7 @@ $toUpdate = $_SESSION['update']; ?>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Back Office</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <link href="css/back.css" type="text/css" rel="stylesheet">
@@ -15,7 +16,7 @@ $toUpdate = $_SESSION['update']; ?>
   <section class="container-fluid">
     <div class="row">
       <!-- SIDEBAR -->
-      <div class="col-2 sidebar vh">
+      <div class="col-lg-2 col-md-3 sidebar vh">
         <div class="row justify-content-center sidebar-icon">
           <button class="open-button"><img src="img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4"></button>
         </div>
@@ -38,22 +39,23 @@ $toUpdate = $_SESSION['update']; ?>
         </div>
         </div>
       </div>
-      <div class="col-10">
+      <div class="col-lg-10 col-md-9">
   <div class="row header mb-1">
-    <div class="col-10">
+    <div class="col-md-8 col-10">
     <h1 class="my-4 py-4 pl-5">Dashboard</h1>
   </div>
-  <div class="col-2 my-4 py-4 header-icons">
+  <div class="col-md-4 col-2 my-4 py-4 header-icons">
 <i class="far fa-bell pr-4"></i>
-<i class="fas fa-envelope-open-text"></i>
+<i class="fas fa-envelope-open-text pr-4"></i>
+<a href="home.php"><i class="fas fa-sign-out-alt"></i></a>
 </div>
   </div>
   <!-- EDIT FORM -->
   <div class="row add-form mt-2">
-    <div class="col-3">
+    <div class="col-lg-3">
       <h2 class="text-dark font-weight-bold mt-4 pl-5">Edit entry</h2>
     </div>
-    <div class="col-9">
+    <div class="col-lg-9">
 <div class="pl-5">
   <form action="../controler.php" method="POST" enctype="multipart/form-data" name="edit-form">
     <div class="form-group pt-1">

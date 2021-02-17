@@ -57,28 +57,29 @@ return $ids;
 
 // ADD NEW SECTION
 function addDish($title, $description, $price, $img_name, $category) {
+  $conn = dbConnect();
 
-$conn = dbConnect();
+  $sql = "INSERT INTO `dish` (`title`,`description`,`price`, `image`, `category`)
+  VALUES (:title,:description,:price, :img_name, :category)";
 
-$sql = "INSERT INTO `dish` (`title`,`description`,`price`, `image`, `category`)
-	 VALUES (:title,:description,:price, :img_name, :category)";
-   $request = $conn->prepare($sql);
-   $request->bindValue(':title', $title, PDO::PARAM_STR);
-   $request->bindValue(':description', $description, PDO::PARAM_STR);
-   $request->bindValue(':price', $price, PDO::PARAM_STR);
-   $request->bindValue(':img_name', $img_name, PDO::PARAM_STR);
-   $request->bindValue(':category', $category, PDO::PARAM_STR);
-   if($request->execute()) {
-     $_SESSION['message'] = "Section added successfully";
-     header('Location: vue/dashboard.php');
-     if($_FILES['img']['error']!=4 && $img_name==NULL) {
-       $_SESSION['message'] .= "<br>The submitted file was nos an image, please try to upload once again";
-     }
-   }else{
-     $_SESSION['message'] = "Section could not be added : please try again";
-     header('Location: vue/dashboard.php');
-   }
-   $request->closeCursor();
+  $request = $conn->prepare($sql);
+  $request->bindValue(':title', $title, PDO::PARAM_STR);
+  $request->bindValue(':description', $description, PDO::PARAM_STR);
+  $request->bindValue(':price', $price, PDO::PARAM_STR);
+  $request->bindValue(':img_name', $img_name, PDO::PARAM_STR);
+  $request->bindValue(':category', $category, PDO::PARAM_STR);
+  
+  if($request->execute()) {
+    $_SESSION['message'] = "Section added successfully";
+    header('Location: vue/dashboard.php');
+    if($_FILES['img']['error']!=4 && $img_name==NULL) {
+      $_SESSION['message'] .= "<br>The submitted file was nos an image, please try to upload once again";
+    }
+  }else{
+    $_SESSION['message'] = "Section could not be added : please try again";
+    header('Location: vue/dashboard.php');
+  }
+  $request->closeCursor();
 } // END OF INSERT
 
 // DELETE ENTRY
