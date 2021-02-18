@@ -1,3 +1,8 @@
+<?php require_once('../controler.php');
+if ($_SESSION['username'] == false) {
+  header('Location: ../index.php');
+} ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>

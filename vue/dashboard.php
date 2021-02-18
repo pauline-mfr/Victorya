@@ -1,4 +1,7 @@
-<?php  include('../controler.php'); ?>
+<?php require('../controler.php');
+if ($_SESSION['username'] == false) {
+  header('Location: ../index.php');
+} ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

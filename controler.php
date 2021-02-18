@@ -11,7 +11,6 @@ function filterData($data) {
   return $data;
 }
 
-
 //ADD A SECTION
 if (isset($_POST['save'])) {
   // error messages if empty input

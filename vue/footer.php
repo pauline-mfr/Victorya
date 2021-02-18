@@ -20,6 +20,7 @@
 <p class="copyright">Copyright©Arifur Rahman, 2019. All rights reserved</p>
 </div>
 <?php unset($_SESSION['error']); ?>
+<?php unset($_SESSION['username']); ?>
 <script type="text/javascript" src="js/main.js"></script>
 <script src="https://kit.fontawesome.com/5bf2af5d34.js" crossorigin="anonymous"></script>
 <script>

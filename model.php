@@ -1,7 +1,5 @@
 <?php
-
 function dbConnect() {
-
 $servername = "localhost";
 $dbname = "food";
 $username = "root";
@@ -172,6 +170,8 @@ function updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat) 
      header('Location: vue/home.php');
    } else {
      if(password_verify($password_to_check, $result['password'])) {
+       $_SESSION['username'] = true;
+      // echo($_SESSION['username']);
       header('Location: vue/dashboard.php');
     } else {
       $_SESSION['error'] = "Username or password is wrong, please try again";
