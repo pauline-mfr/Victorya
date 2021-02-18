@@ -1,6 +1,4 @@
-<?php
-include('../controler.php');
-include('connect.php'); ?>
+<?php include('../controler.php'); ?>
 
 <!DOCTYPE html>
 <html lang="fr" >
@@ -43,7 +41,7 @@ include('connect.php'); ?>
 <!-- Admin form -->
   <div class="login-popup">
    <div class="form-popup" id="popupForm">
-     <form action="" name="connexion" method="POST" class="form-container">
+     <form action="../controler.php" name="connexion" method="POST" class="form-container">
        <label for="username">
        <strong>Username</strong>
        </label>

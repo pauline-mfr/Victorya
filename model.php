@@ -68,7 +68,7 @@ function addDish($title, $description, $price, $img_name, $category) {
   $request->bindValue(':price', $price, PDO::PARAM_STR);
   $request->bindValue(':img_name', $img_name, PDO::PARAM_STR);
   $request->bindValue(':category', $category, PDO::PARAM_STR);
-  
+
   if($request->execute()) {
     $_SESSION['message'] = "Section added successfully";
     header('Location: vue/dashboard.php');
@@ -136,3 +136,46 @@ function updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat) 
    }
    $request->closeCursor();
  } // END UPDATE
+
+
+ // REGISTER ADMIN
+ function addAdmin($new_username, $new_password) {
+   $conn = dbConnect();
+
+   $sql = "INSERT INTO `admin` (`username`,`password`)
+   VALUES (:new_username,:new_password)";
+
+   $request = $conn->prepare($sql);
+   $request->bindValue(':new_username', $new_username, PDO::PARAM_STR);
+   $request->bindValue(':new_password', $new_password, PDO::PARAM_STR);
+
+   if($request->execute()) {
+     $_SESSION['message'] = "Administrator account added successfully";
+     header('Location: vue/dashboard.php');
+   }else{
+     $_SESSION['message'] = "Administrator account could not be added : please try again";
+     header('Location: vue/dashboard.php');
+   }
+   $request->closeCursor();
+ } // END OF REGISTER
+
+ // ADMIN CONNEXION
+   function adminConnect($username, $password_to_check) {
+    $conn = dbConnect();
+   $sql = "SELECT * FROM admin WHERE username= :username";
+   $request = $conn->prepare($sql);
+   $request->bindValue(':username', $username, PDO::PARAM_STR);
+   $request->execute();
+   $result = $request->fetch();
+   if (!$result) {
+     $_SESSION['error'] = "We couldn't find this username, please try again";
+     header('Location: vue/home.php');
+   } else {
+     if(password_verify($password_to_check, $result['password'])) {
+      header('Location: vue/dashboard.php');
+    } else {
+      $_SESSION['error'] = "Username or password is wrong, please try again";
+      header('Location: vue/home.php');
+    }
+   }
+} // END OF CONNEXION

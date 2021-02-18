@@ -7,6 +7,7 @@ function filterData($data) {
   $data = trim($data); // delete useless spaces
   $data = stripslashes($data); //strip backslashes
   $data = strip_tags($data); //strip html tags
+  //htmlspecialchars
   return $data;
 }
 
@@ -88,10 +89,32 @@ if(isset($_POST['update'])) {
   }
 } //END UPDATE QUERY
 
-// // CONNEXION
-//   if(isset($_POST['connect']) && (isset($_POST['username']) && isset($_POST['password'])) )
-//   {
-//     $username = $_POST['username'];
-//     $password = $_POST['password'];
-//     adminConnect($username, $password);
-// } // END CONNEXION
+// REGISTER
+if (isset($_POST['register'])) {
+  if ($_POST['register_password'] == $_POST['confirm_password']) {
+    $new_username = filterData($_POST['register_username']);
+    $new_password = password_hash((filterData($_POST['confirm_password'])), PASSWORD_DEFAULT);
+
+    // error messages if empty input
+    if (empty($new_username)) {echo "Username is empty<br>";}
+    if (empty($new_password)) {echo "Password is empty";}
+    if (empty($confirm_password)) {echo "Password confirmation is empty";}
+
+    // if all fields are set -> execute sql request
+    if(!(empty($new_username)) && !(empty($new_password))) {  addAdmin($new_username, $new_password);
+  }
+} else {
+  echo ("Passwords are not matching, please try again.");
+}
+} // END OF REGISTER
+
+// DASHBOARD CONNEXION
+  if(isset($_POST['username']) && isset($_POST['password']))
+  {
+    $username = filterData($_POST['username']);
+    $password_to_check = filterData($_POST['password']);
+
+    if (!empty($username) && !empty($password_to_check)) {
+      adminConnect($username, $password_to_check);
+    }
+} // END OF CONNEXION
