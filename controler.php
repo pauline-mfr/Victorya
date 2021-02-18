@@ -11,14 +11,14 @@ function filterData($data) {
   return $data;
 }
 
-//ADD A SECTION
+// ADDING FORM
 if (isset($_POST['save'])) {
-  // error messages if empty input
   $title = filterData($_POST['title']);
-  if (empty($title)) {echo "Title is empty<br>";}
   $description = filterData($_POST['desc']);
-  if (empty($description)) {echo "Description is empty<br>";}
   $price = filterData($_POST['price']);
+  // error messages if empty input
+  if (empty($title)) {echo "Title is empty<br>";}
+  if (empty($description)) {echo "Description is empty<br>";}
   if (empty($price)) {echo "Price is empty<br>";}
 
   // IMG UPLOAD
@@ -48,50 +48,58 @@ if (isset($_POST['save'])) {
   }
 } // END OF ADDING
 
-// DELETE ENTRY
+// DELETE BUTTON
 if(isset($_POST['delete'])) {
   deleteDish();
 }
 
-// UPDATE FORM
+// UPDATE BUTTON
 if(isset($_POST['edit'])) {
   dishToUpdate();
+  // register data to be updated
   $_SESSION['update'] = dishToUpdate();
   header('Location: vue/edit.php');
 }
-// UPDATE QUERY
+
+// UPDATE FORM
 if(isset($_POST['update'])) {
   $new_title = filterData($_POST['new_title']);
   $new_desc = filterData($_POST['new_desc']);
   $new_price = filterData($_POST['new_price']);
   $new_img_name = filterData($_POST['same_img']);
-
+  // error messages if empty input
   if (empty($new_title)) {echo "Title is empty<br>";}
   if (empty($new_desc)) {echo "Description is empty<br>";}
   if (empty($new_price)) {echo "Price is empty<br>";}
 
   //IMG UPLOAD
+  // check if a file was submitted throught the form
   if($_FILES['new_img']['error']!=4){
     $extensions_ok = array('png', 'gif', 'jpg', 'jpeg', 'JPG', 'bmp');
+    // check if file extension = proper image
     if(!in_array(substr(strrchr($_FILES['new_img']['name'], '.'), 1), $extensions_ok)) {
+      // if not, file is not registered in db
       $new_img_name = NULL;
     }else{
+      // specifies the directory direction
       $new_img_name = $_FILES['new_img']['name'];
       $dir ='vue/img/'.$new_img_name;
       move_uploaded_file($_FILES['new_img']['tmp_name'], $dir);
     }
   }
   $new_cat = filterData($_POST['new_cat']);
-
+  // if all fields are set (except optional file input) -> execute sql request
   if(!(empty($new_title)) && !(empty($new_desc)) && !(empty($new_price)) && !(empty($new_cat))) {
     updateDish($new_title, $new_desc, $new_price, $new_img_name, $new_cat);
   }
 } //END UPDATE QUERY
 
-// REGISTER
+// REGISTER FORM
 if (isset($_POST['register'])) {
+  //if both passwords are the same
   if ($_POST['register_password'] == $_POST['confirm_password']) {
     $new_username = filterData($_POST['register_username']);
+    //hash the password
     $new_password = password_hash((filterData($_POST['confirm_password'])), PASSWORD_DEFAULT);
 
     // error messages if empty input
@@ -100,20 +108,20 @@ if (isset($_POST['register'])) {
     if (empty($confirm_password)) {echo "Password confirmation is empty";}
 
     // if all fields are set -> execute sql request
-    if(!(empty($new_username)) && !(empty($new_password))) {  addAdmin($new_username, $new_password);
+    if(!(empty($new_username)) && !(empty($new_password))) {
+      addAdmin($new_username, $new_password);
+    }
+  } else {
+    echo ("Passwords are not matching, please try again.");
   }
-} else {
-  echo ("Passwords are not matching, please try again.");
-}
 } // END OF REGISTER
 
 // DASHBOARD CONNEXION
-  if(isset($_POST['username']) && isset($_POST['password']))
-  {
-    $username = filterData($_POST['username']);
-    $password_to_check = filterData($_POST['password']);
+if(isset($_POST['username']) && isset($_POST['password'])) {
+  $username = filterData($_POST['username']);
+  $password_to_check = filterData($_POST['password']);
 
-    if (!empty($username) && !empty($password_to_check)) {
-      adminConnect($username, $password_to_check);
-    }
+  if (!empty($username) && !empty($password_to_check)) {
+    adminConnect($username, $password_to_check);
+  }
 } // END OF CONNEXION

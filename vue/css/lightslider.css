@@ -72,45 +72,6 @@
 /** /!!! End of core css Should not edit !!!/**/
 
 
-
-/* slider actions */
-.lSAction > a {
-    width: 32px;
-    display: block;
-    top: 50%;
-    height: 32px;
-    background-image: url('../img/controls.png');
-    cursor: pointer;
-    position: absolute;
-    z-index: 99;
-    margin-top: -16px;
-    opacity: 0.5;
-    -webkit-transition: opacity 0.35s linear 0s;
-    transition: opacity 0.35s linear 0s;
-}
-.lSAction > a:hover {
-    opacity: 1;
-}
-.lSAction > .lSPrev {
-    background-position: 0 0;
-    left: 10px;
-}
-.lSAction > .lSNext {
-    background-position: -32px 0;
-    right: 10px;
-}
-.lSAction > a.disabled {
-    pointer-events: none;
-}
-.cS-hidden {
-    height: 1px;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    overflow: hidden;
-}
-
-
-
 /* Rtl */
 .lSSlideOuter.lSrtl {
     direction: rtl;

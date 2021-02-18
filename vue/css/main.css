@@ -149,14 +149,14 @@ font-weight: bold; font-size: 28px;}
 
 /* FOOTER */
 
-#contact {height: 100vh; background-image: url("../img/back1.png"); background-size: cover; margin-top: -41vh;}
-#contact .container {margin-top: 40vh;}
-#contact .left-img {margin-top: 2vh; z-index: 1;}
-#contact .right-img {float: right; margin-top: 40vh; z-index: 2;}
+footer {height: 100vh; background-image: url("../img/back1.png"); background-size: cover; margin-top: -41vh;}
+footer .container {margin-top: 40vh;}
+footer .left-img {margin-top: 2vh; z-index: 1;}
+footer .right-img {float: right; margin-top: 40vh; z-index: 2;}
 .cadre {width: 90%; height: 70vh; z-index: 2; margin-top: -80vh; margin-left: 4vw;}
-#contact h2 {color: #0C3653; font-weight: bold; font-size: 30px; font-family: "Georgia"; margin-top: -60vh; margin-left: 10.5vw; display: flex; justify-content:center;}
-#name {background-color: #F9FBFB; border: none; border-radius: 2px 0 0 2px; margin-left: 10vw; height: 10vh; width: 41%; margin-top: 10vh;}
-#name::placeholder{color: #8B8E8F; font-family: "Muli"; font-size: 22px; text-align: center;}
+footer h2 {color: #0C3653; font-weight: bold; font-size: 30px; font-family: "Georgia"; margin-top: -60vh; margin-left: 10.5vw; display: flex; justify-content:center;}
+#email {background-color: #F9FBFB; border: none; border-radius: 2px 0 0 2px; margin-left: 10vw; height: 10vh; width: 41%; margin-top: 10vh;}
+#email::placeholder{color: #8B8E8F; font-family: "Muli"; font-size: 22px; text-align: center;}
 .contact-btn {background: #F98169; border: none; width: 15vw; height: 10vh; color: #fff; border-radius: 0 10px 10px 0;}
 .subscribe {font-weight: bold; font-size: 14px; padding: 1vw;}
 
@@ -192,8 +192,8 @@ font-weight: bold; font-size: 28px;}
   .package-right-text button {margin-top: 5vh; }
   .package-bottom {display: none;}
   #about h2 {margin-top: 10vh;}
-  #name {width: 30%; height: 8vh;}
-  #name::placeholder {font-size: 15px;}
+  #email {width: 30%; height: 8vh;}
+  #email::placeholder {font-size: 15px;}
   .contact-btn {height: 8vh;}
   .bottom-logo {padding-right: 5vw;}
   .bottom-menu {width: 100%:}
@@ -211,11 +211,11 @@ font-weight: bold; font-size: 28px;}
   .header-btn {margin-left: 10vw; margin-top: 4vh;}
   .box {width: 350px; height: 400px;}
   .overlay1 {display: none;}
-  #contact .left-img {display: none;}
-  #contact .right-img {display: none;}
-  #contact h2 {margin-top: -10vh;}
+  footer .left-img {display: none;}
+  footer .right-img {display: none;}
+  footer h2 {margin-top: -10vh;}
   .cadre {display: none;}
-  #name {margin-top: 5vh; width: 200px;}
+  #email {margin-top: 5vh; width: 200px;}
   .contact-btn {width: 15vw;}
   .bottom-menu {margin-top: 100px!important; width: 100%;}
 }
@@ -227,8 +227,8 @@ font-weight: bold; font-size: 28px;}
   .package-right-text h2 {font-size: 22px; margin-top: 5vh; margin-bottom: 5vh;}
   .recipes h2 {text-align: center; margin-top: 8vh;}
   .box {width: 250px; height: 300px;}
-  #contact h2 {margin-left: 0; text-align: center;}
-  #name {margin-left: 0;}
+  footer h2 {margin-left: 0; text-align: center;}
+  #email {margin-left: 0;}
   .contact-btn span {display: none;}
   .bottom-menu {display: flex; flex-direction: column; height: 30vh;}
   .bottom-logo {font-size: 25px;}
