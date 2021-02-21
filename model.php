@@ -174,7 +174,7 @@ function dbConnect() {
         // if password matches the hashed one
         if(password_verify($password_to_check, $result['password'])) {
           //authorized access to back-office
-          $_SESSION['username'] = true;
+          $_SESSION['username'] = $result['username'];
           header('Location: vue/dashboard.php');
         } else {
           $_SESSION['error'] = "Username or password is wrong, please try again";

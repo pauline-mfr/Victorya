@@ -9,7 +9,7 @@
     <div class="col-lg-6 col-sm-12 package-right-text">
       <h2>The best comfort food will<br> always be greens, cornbread,<br> and fried chicken.</h2>
       <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam<br> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam <br>erat, sed diam voluptua. At vero eos et accusam et justo duo dolores<br> et ea rebum. Stet clita kasd gubergren,</p>
-      <button><a class="package-btn" href="#">Know More About Us</a></button>
+      <button>Know More About Us</button>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,</p>
       </div>
       <div class="row">
-        <button><a class="package-btn" href="#">Know More About Us</a></button>
+        <button>Know More About Us</button>
       </div>
     </div>
     <div class="col-lg-6">

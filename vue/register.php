@@ -9,6 +9,7 @@ if ($_SESSION['username'] == false) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Back office</title>
+    <link rel="icon" type="image/png" href="img/flavicon.png" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <link href="css/back.css" type="text/css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/5bf2af5d34.js" crossorigin="anonymous"></script>
@@ -20,6 +21,7 @@ if ($_SESSION['username'] == false) {
       <div class="col-lg-2 col-md-3 sidebar vh">
         <div class="row justify-content-center sidebar-icon">
           <button class="open-button"><img src="img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4"></button>
+          <?php echo("<p class='text-center'>".$_SESSION['username']."</p>");?>
         </div>
         <div class="row pb-4 pt-5 mt-4">
           <div>
@@ -30,8 +32,14 @@ if ($_SESSION['username'] == false) {
         <div class="row">
           <form method="POST" action="add.php">
             <i class="far fa-plus-square text-light pl-2 pb-5"></i>
-            <button class="btn" type="submit" name="add"><h2>Add a section</h2></button>
+            <button class="btn" type="submit" name="add"><h2>Add section</h2></button>
           </form>
+          <div class="row">
+            <div>
+          <i class="fas fa-users-cog text-light  pb-5"></i>
+          <button class="btn"><a href="register.php"><h2>Register user</h2></a></button>
+        </div>
+      </div>
         </div>
         <div class="row">
           <div>
@@ -60,13 +68,14 @@ if ($_SESSION['username'] == false) {
             <div class="pl-5">
               <form action="../controler.php" method="POST" name="register-form">
                 <div class="form-group pt-1">
+                  <p id="error"></p>
                   <label for="register_username">Enter the username</label>
                   <input name="register_username" type="text" class="form-control" required>
                   <label for="register_password">Enter the password</label>
-                  <input name="register_password" type="password" class="form-control" required>
+                  <input name="register_password" type="password" class="form-control" id="firstPassword" required>
                   <label for="confirm_password">Enter the password again</label>
-                  <input name="confirm_password" type="password" class="form-control" required><br>
-                  <button type="submit" name="register" class="btn btn-dark">Register</button>
+                  <input name="confirm_password" type="password" class="form-control" id="secondPassword" required><br>
+                  <button type="submit" name="register" class="btn btn-dark" id="register-btn">Register</button>
                 </form>
               </div>
             </div>
@@ -75,6 +84,32 @@ if ($_SESSION['username'] == false) {
       </div>
     </div>
   </section>
+  <script>
+  function checkPasswordMatch() {
+    let first = $("#firstPassword").val();
+    let second = $("#secondPassword").val();
+
+    if (first != second)
+        $("#error").html("Passwords do not match!");
+    else
+        $("#error").html("Passwords match.");
+}
+
+$(document).ready(function () {
+   $("#secondPassword").keyup(checkPasswordMatch());
+});
+
+    // let first = document.getElementById('firstPassword');
+    // let second = document.getElementById('secondPassword');
+    // let btn = document.getElementById('register-btn');
+    // if (first.value != second.value) {
+    //   console.log("ok");
+    //   btn.disabled = false;
+    // };
+    // //document.getElementById('error').innerHTML = "Password are not matching";
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>

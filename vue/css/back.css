@@ -7,6 +7,7 @@ h2 {font-size: 18px; font-weight: 400; color: #D3D3D3;}
 a {text-decoration: none;}
 .sidebar {background-color: #323845;}
 .vh {height: 100vh;}
+.sidebar-icon p {color: #F98169;}
 .admin-icon {width: 55px; height: 80px; padding-bottom: 3px;}
 .open-button {width: 110px; height:110px; border-radius: 50%; border: none; background: #F98169; margin-top: 20px;}
 .dashboard-icons {float: right;}

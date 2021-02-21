@@ -8,6 +8,7 @@ if ($_SESSION['username'] == false) {
 <head>
   <meta charset="utf-8">
   <title>Back office</title>
+    <link rel="icon" type="image/png" href="img/flavicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
   <link href="css/back.css" type="text/css" rel="stylesheet">
@@ -21,6 +22,7 @@ if ($_SESSION['username'] == false) {
       <div class="col-lg-2 col-md-3 sidebar">
         <div class="row justify-content-center sidebar-icon">
           <button class="open-button"><img src="img/admin1.png" alt="admin icon" class="admin-icon my-4 pb-4"></button>
+          <?php echo("<p class='text-center'>".$_SESSION['username']."</p>");?>
         </div>
         <div class="row pb-4 pt-5 mt-4">
           <div>
@@ -32,9 +34,15 @@ if ($_SESSION['username'] == false) {
           <!-- ADDING BTN -->
           <form method="POST" action="add.php">
             <i class="far fa-plus-square text-light pl-2 pb-5"></i>
-            <button class="btn" type="submit" name="add"><h2>Add a section</h2></button>
+            <button class="btn" type="submit" name="add"><h2>Add section</h2></button>
           </form>
         </div>
+        <div class="row">
+          <div>
+        <i class="fas fa-users-cog text-light pl-2 pb-5"></i>
+        <button class="btn"><a href="register.php"><h2>Register user</h2></a></button>
+      </div>
+    </div>
         <div class="row">
           <div>
             <i class="fas fa-globe text-light pl-2"></i>
